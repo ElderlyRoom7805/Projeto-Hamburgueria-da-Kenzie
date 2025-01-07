@@ -1,10 +1,17 @@
+import { useEffect, useState } from "react";
 import { ProductCard } from "./ProductCard";
 
-export const ProductList = ({ productList }) => {
+export const ProductList = ({ productList, a, set }) => {
+   useEffect(()=>{
+      console.log(a)
+      { a ? localStorage.setItem("@buy", JSON.stringify(a)) : null};
+      set(a)
+   },[a])
+
    return (
-      <ul>
+      <ul className="all-boxes">
          {productList.map((product) => (
-            <ProductCard key={product.id} product={product} />
+            <ProductCard key={product.id} product={product} setAdd={set} add={a}/>
          ))}
       </ul>
    );
