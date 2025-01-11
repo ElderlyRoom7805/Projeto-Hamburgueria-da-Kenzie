@@ -3,7 +3,6 @@ import { ProductCard } from "./ProductCard";
 
 export const ProductList = ({ productList, a, set }) => {
    useEffect(()=>{
-      console.log(a)
       { a ? localStorage.setItem("@buy", JSON.stringify(a)) : null};
       set(a)
    },[a])

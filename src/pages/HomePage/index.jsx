@@ -11,7 +11,6 @@ export const HomePage = () => {
    const [productList, setProductList] = useState([]);
    const [cartList, setCartList] = useState(cart? JSON.parse(cart) : []);
    const [isOen, setOpen] = useState(false);
-   console.log(cartList)
 
 
    useEffect(() => {
@@ -21,16 +20,7 @@ export const HomePage = () => {
       }
       product()
    }, [])
-
    
-
-   // useEffect montagem - carrega os produtos da API e joga em productList
-   // useEffect atualização - salva os produtos no localStorage (carregar no estado)
-   // adição, exclusão, e exclusão geral do carrinho
-   // renderizações condições e o estado para exibir ou não o carrinho
-   // filtro de busca
-   // estilizar tudo com sass de forma responsiva
-
    return (
       <>
          <Header product={productList} setProduct={setProductList} set={setOpen} length={cartList.length}/>
